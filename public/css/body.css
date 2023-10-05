@@ -1,0 +1,69 @@
+body,html {
+    background-image: url("/img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+ body .navbar-style {
+     background-color: transparent;
+     margin-top: 2rem;
+   }
+   
+   body .navbar-style nav {
+     background-color: transparent;
+   }
+   .container{
+     width: 100vw;
+     min-height:80vh;
+   }
+  .meal-style .hero-text .col-12{
+     height: 10rem;
+   }
+   .meal-style label{
+     font-size: 2.6rem;
+   }
+   .meal-style input{
+     margin-left: 1rem;
+     font-size: 1.6rem;
+     width: 6rem;
+     font-weight: bold;
+     text-align: center;
+   }
+   .meal-style select{
+     margin-left: 1rem;
+     font-size: 1.6rem;
+     width: 16rem;
+     font-weight: bold;
+     text-align: center;
+   }
+   .meal-style button{
+     width: 20rem;
+     height: 4rem;
+     font-weight: 400;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     
+     color: white;
+     font-size: 2rem;
+     animation: hello infinite linear 800ms;
+   }
+ @keyframes hello {
+     0%{
+         background-color: transparent;
+     border-color: red;
+     }
+     50%{
+         background-color: red;
+     border-color: black;
+     }
+     100%{
+         background-color: transparent;
+     border-color: red;
+     }
+ }
+ .meal-style .meal-plan{
+     color: white;
+     border: 0.5rem black solid;
+     background-color: rgba(0, 0, 0, 0.5);
+     font-size: 2rem;
+     line-height: 3rem;
+     
+ }

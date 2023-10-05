@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Josefin sans";
+  background-color: black;
+}
+html {
+  font-size: 62.5%;
+}
+.navbar-style {
+  background-color: black;
+  margin-top: 2rem;
+  & nav {
+    background-color: black;
+    & .navbar-brand {
+      color: #ffbe0b;
+      font-size: 3.6rem;
+    }
+    & ul {
+      margin-left: 2rem;
+
+      & li {
+        margin-left: 1rem;
+        position: relative;
+
+        & a {
+          color: white;
+          font-size: 1.9rem;
+          &:hover {
+            color: white;
+          }
+          &:hover .line {
+            width: 80%;
+          }
+          & .line {
+            transition: 0.5s all;
+            position: absolute;
+            width: 0;
+            border-radius: 2rem;
+            height: 0.3rem;
+            background-color: #ffbe0b;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Hero section
+.hero-text h1 {
+  font-size: 5.5rem;
+  line-height: 1.5;
+  text-shadow: 5px 4px 11px rgba(0, 0, 0, 0.26);
+  letter-spacing: 1px;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-text h1:nth-child(2) {
+  font-weight: bold;
+  color: #5222d0;
+}
+
+.hero-text p,
+.our-services p,
+label {
+  font-size: 1.7rem;
+  letter-spacing: 0.2rem;
+  color: #777676;
+  text-transform: capitalize;
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.hero-text p span {
+  font-weight: bold;
+  color: white;
+}
+.hero-text figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+// services startv here
+.service-style,
+.review-style {
+  margin-bottom: 10rem;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.our-services {
+  margin-top: 75px;
+  padding-bottom: 30px;
+  padding: 0 30px;
+  min-height: 198px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: black;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 0 25px 0 rgba(20, 27, 202, 0.17);
+}
+
+.our-services .icon {
+  margin-bottom: -21px;
+  transform: translateY(-50%);
+  text-align: center;
+  & img {
+    width: 93px;
+    height: 85px;
+  }
+}
+
+.our-services h4 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.our-services:hover h4,
+.our-services:hover p {
+  color: white;
+}
+
+.speedup:hover {
+  box-shadow: 0 0 25px 0 rgba(33, 39, 221, 0.2);
+  cursor: pointer;
+  background-image: linear-gradient(-45deg, #f33474 0%, #f55b2a 50%);
+}
+
+.settings:hover {
+  box-shadow: 0 0 25px 0 rgba(20, 27, 201, 0.2);
+  cursor: pointer;
+  background-image: linear-gradient(-45deg, #49d0da 0%, #210c59 50%);
+}
+
+.privacy:hover {
+  box-shadow: 0 0 25px 0 rgba(20, 27, 201, 0.2);
+  cursor: pointer;
+  background-image: linear-gradient(-45deg, #5035ec 0%, #44a2f6 50%);
+}
+
+.backups:hover {
+  box-shadow: 0 0 25px 0 rgba(20, 27, 201, 0.2);
+  cursor: pointer;
+  background-image: linear-gradient(-45deg, #fd7f30 0%, #fdb642 50%);
+}
+
+.ssl:hover {
+  box-shadow: 0 0 25px 0 rgba(20, 27, 201, 0.2);
+  cursor: pointer;
+  background-image: linear-gradient(-45deg, #974eff 0%, #5a57fb 50%);
+}
+
+.database:hover {
+  box-shadow: 0 0 25px 0 rgba(20, 27, 201, 0.2);
+  cursor: pointer;
+  background-image: linear-gradient(-45deg, #27b88d 0%, #22dd73 50%);
+}
+// services end here
+
+// headin start here
+.service-style,
+.about-style {
+  & .main-heading {
+    font-size: 5rem;
+    color: #fd5c63;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+}
+.service-style,
+.about-style {
+  & .sub-heading {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    line-height: 2;
+    color: white;
+    font-weight: 500;
+  }
+}
+// heading end here
+
+.login-button{
+  font-size: 2.6rem;
+}
+.login-button a{
+  text-decoration: none;
+  color: white;
+}

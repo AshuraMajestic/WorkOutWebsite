@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrients</title>
+    <link rel="stylesheet" href="css/nutrition.css" />
+    {{>head}}
+
+  </head>
+  <body>
+    {{>navbar}}
+    <div class="container meal-style">
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="col-md-12 col-12 mx-auto">
+            <div class="row">
+              {{! left side  }}
+              <div
+                class="col-md-6 col-12 hero-text order-md-0 order-1 justify-content-center align-items-start flex-column"
+              >
+              <div class="row center">
+                <div class="col-12 center">
+                <h1>Meal Planner</h1>
+                </div>
+                <div class="col-12 center">
+                <label for="calories" class="pt-5">Calories:</label>
+                <input type="number" id="calories" min="0" required />
+                </div>
+                <div class="col-6 center">
+                  <label for="gender" class="pt-5">Gender:</label>
+                <select id="gender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+                </div>
+                <div class="col-6">
+                  <label for="age"  class="pt-5">Age:</label>
+                <select id="age">
+                  <option value="kid">Kid</option>
+                  <option value="teen">TeenAger</option>
+                  <option value="adult">Adult</option>
+                  <option value="senior">Senior</option>
+                </select>
+                </div>
+                <div class="col-12 center">
+                <button id="generate-plan">Generate Meal Plan</button>
+                </div>
+                </div>
+              </div>
+              {{! right side  }}
+              <div class="col-md-6 col-12 hero-text meal order-md-1 order-0 center">
+                <div class="meal-plan" id="meal-plan"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{>footer}}
+    <script src="js/nutrition.js"></script>
+  </body>
+</html>

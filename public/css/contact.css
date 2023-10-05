@@ -1,0 +1,42 @@
+body{
+    background-image:url("/img/woman.jpg") ;
+    background-size: cover;
+}
+.contact-page h1{
+ text-align: center;
+ color: white;
+ font-weight: bold;
+ font-size: 3.6rem;
+}
+.contact-page label{
+    font-size: 2.8rem;
+}
+.contact-page input{
+    height: 4rem;
+    margin-top: -3rem;
+    color: white;
+    font-size: 2.8rem;
+    background: transparent;
+    border:red .4rem solid ;
+}
+.contact-page input:focus,.contact-page textarea:focus{
+    background: transparent;
+    color: white;
+}
+.contact-page textarea{
+    margin-top: -3rem;
+    font-size: 2.4rem;
+    background: transparent;
+    border:red .4rem solid ;
+}
+.contact-page button{
+   margin-left: calc(50% - 8rem);
+   margin-bottom: 2rem;
+    background-color: transparent;
+    font-size: 3rem;
+    border: red 2px solid;
+}
+.contact-page button:hover{
+    background-color: red;
+    border: black;
+}

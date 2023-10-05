@@ -1,0 +1,182 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+ {{>head}}
+  </head>
+  <body>
+    {{>navbar}}
+    <div class="container home-page">
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="col-md-12 col-12 mx-auto">
+            <div class="row">
+              {{! left side  }}
+              <div
+                class="col-md-6 col-12 hero-text order-md-0 order-1 justify-content-center align-items-start flex-column"
+              >
+                <h1>WE WILL HELP YOU TO</h1>
+                <h1>STAY HEALTHY AND FIT</h1>
+                <p>Looking for a
+                  <span>workout buddy</span>
+                  to help you stay motivated and reach your fitness goals? Look
+                  no further than our website, where you can connect with your
+                  choice gyms and advisiors who can help you to achieve your
+                  best selves!</p>
+              </div>
+              {{! right side  }}
+              <div class="col-md-6 col-12 hero-text order-md-1 order-0">
+                <figure>
+                  <img src="img/heroine.svg" alt="herosection_image" />
+                </figure>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid mt-5 service-style" id="service-id">
+        <div class="row">
+          <div class="col-md-10 col-12 mx-auto">
+            <h1 class="text-center main-heading">Our Services</h1>
+            <p class="text-center sub-heading">Reach your Dream Body with Us</p>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="box">
+                  <div class="our-services settings">
+                    <div class="icon">
+                      <img src="img/health.png" alt="setting" />
+                    </div>
+                    <h4>Diet Planner</h4>
+                    <p>
+                      plan your diet with help of various experts and doctors
+                      according to your workout needs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <div class="our-services speedup">
+                    <div class="icon">
+                      <img
+                        src="https://i.imgur.com/6NKPrhO.png"
+                        alt="sppedup"
+                      />
+                    </div>
+                    <h4>Scheduler</h4>
+                    <p>
+                      Schedule your workouts and daily routine.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <div class="our-services privacy">
+                    <div class="icon">
+                      <img
+                        src="https://i.imgur.com/AgyneKA.png"
+                        alt="privacy"
+                      />
+                    </div>
+                    <h4>Weekly Report</h4>
+                    <p>Check your weekly progress and fruitful gains by our
+                      systematic weekly reports.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <div class="our-services backups">
+                    <div class="icon">
+                      <img
+                        src="https://i.imgur.com/vdH9LKi.png"
+                        alt="backups"
+                      />
+                    </div>
+                    <h4>Home Workout planner</h4>
+                    <p>Gym is far Away? Not a problem.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <div class="our-services ssl">
+                    <div class="icon">
+                      <img
+                        src="https://i.imgur.com/v6OnUqu.png"
+                        alt="SSL secured"
+                      />
+                    </div>
+                    <h4>Login</h4>
+                    <p>Old User . Login here
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="box">
+                  <div class="our-services database">
+                    <div class="icon">
+                      <img
+                        src="https://i.imgur.com/VzjZw9M.png"
+                        alt="Database"
+                      />
+                    </div>
+                    <h4>Site Setting</h4>
+                    <p>If you want to customize your experience here try our
+                      cool settings.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{! About section start  }}
+
+      <div class="container-fluid mt-5 about-style" id="about-id">
+        <div class="row">
+          <div class="col-md-12 col-12 mx-auto">
+            <h1 class="text-center main-heading">About Us</h1>
+            <p class="text-center sub-heading">Stay Healthy With Us</p>
+            <div class="row">
+              {{! left side  }}
+              <div
+                class="col-md-6 col-12 hero-text justify-content-center align-items-start flex-column"
+              >
+                <figure>
+                  <img src="img/hero.svg" alt="herosection_image" />
+                </figure>
+              </div>
+
+              {{! right side  }}
+              <div
+                class="col-md-6 col-12 hero-text justify-content-center align-items-start flex-column"
+              >
+                <h1>WE ARE THE PROFESSIONAL WORKOUT ADVISOR</h1>
+                <P>Looking for a
+                  <span class="bold-style">workout buddy</span>, to help you
+                  stay motivated and reach your fitness goals? Look no further
+                  than our website, where you can connect with your choice gyms
+                  and advisiors who can help you to achieve your best selves!
+                </P>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{! About section ends }}
+
+    </div>
+    {{>footer}}
+   
+  </body>
+</html>
