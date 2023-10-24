@@ -13,9 +13,13 @@ const Register = require("./model/info");
 const staticPath = path.join(__dirname, "../public");
 const TemplatePath = path.join(__dirname, "../Templates/views");
 const PartialPath = path.join(__dirname, "../Templates/partials");
-const bootstrap = path.join(__dirname, "../node_modules/bootstrap/dist/css");
+const bootstrap = path.join(
+    __dirname,
+    "../node_modules/bootstrap/dist/css"
+);
 const jPath = path.join(__dirname, "../node_modules/bootstrap/dist/js");
 const jquery = path.join(__dirname, "../node_modules/jquery/dist");
+
 
 // Intializing the uses
 app.use(express.urlencoded({ extended: false }));

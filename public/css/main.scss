@@ -6,6 +6,9 @@
 body {
   font-family: "Josefin sans";
   background-color: black;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 html {
   font-size: 62.5%;
@@ -15,6 +18,12 @@ html {
   margin-top: 2rem;
   & nav {
     background-color: black;
+    & .navbar-toggler {
+      background-color: gold;
+    }
+    & span {
+      background-color: black;
+    }
     & .navbar-brand {
       color: #ffbe0b;
       font-size: 3.6rem;
@@ -49,7 +58,9 @@ html {
     }
   }
 }
-
+.row {
+  width: 100%;
+}
 // Hero section
 .hero-text h1 {
   font-size: 5.5rem;
@@ -192,10 +203,11 @@ label {
 }
 // heading end here
 
-.login-button{
+.login-button {
   font-size: 2.6rem;
+  right: 0;
 }
-.login-button a{
+.login-button a {
   text-decoration: none;
   color: white;
 }

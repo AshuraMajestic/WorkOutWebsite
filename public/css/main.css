@@ -3,10 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 body {
   font-family: "Josefin sans";
   background-color: black;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 html {
@@ -18,6 +25,12 @@ html {
   margin-top: 2rem;
 }
 .navbar-style nav {
+  background-color: black;
+}
+.navbar-style nav .navbar-toggler {
+  background-color: gold;
+}
+.navbar-style nav span {
   background-color: black;
 }
 .navbar-style nav .navbar-brand {
@@ -51,6 +64,10 @@ html {
   bottom: 0;
 }
 
+.row {
+  width: 100%;
+}
+
 .hero-text h1 {
   font-size: 5.5rem;
   line-height: 1.5;
@@ -82,11 +99,9 @@ label {
   color: white;
 }
 
-.hero-text figure {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+.hero-text figure img {
+  width: 100%;
+  height: 100%;
 }
 
 .service-style,
@@ -188,9 +203,10 @@ label {
 
 .login-button {
   font-size: 2.6rem;
+  right: 0;
 }
 
 .login-button a {
   text-decoration: none;
   color: white;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
