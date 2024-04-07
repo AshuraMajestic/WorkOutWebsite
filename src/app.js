@@ -82,6 +82,9 @@ app.get("/body", (req, res) => {
 app.get("/contact", (req, res) => {
     res.render("contact");
 })
+app.get("/membership", (req, res) => {
+    res.render("membership");
+})
 app.post("/contact", async (req, res) => {
     try {
         const userData = new User(req.body);

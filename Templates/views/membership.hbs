@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membership</title>
+    <link rel="stylesheet" href="css/member.css">
+    {{>head}}
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container">
+        <h1 style="text-align:center; color:white;">Choose Your plan</h1>
+        <div class="row pricing">
+            <div class="columns col-5 mx-5">
+                <ul class="price">
+                    <li class="header">Basic</li>
+                    <li class="grey">$ 0 /year</li>
+                    <li class="white">10 Meal-Plans/Month</li>
+                    <li class="white">10 WorkOut-Plan/Month</li>
+                    <li class="white">10 Advices</li>
+                    <li class="grey"><a href="#" class="button">Already Bought</a></li>
+                </ul>
+            </div>
+
+            <div class="columns col-5 mx-5">
+                <ul class="price">
+                    <li class="header" style="background-color:#04AA6D">Membership</li>
+                    <li class="grey">$ 10.00 / year</li>
+                    <li class="white">Unlimited Meal-plans</li>
+                    <li class="white">Unlimited WorkOut-Plan</li>
+                    <li class="white">Unlimited Advices</li>
+                    <li class="grey"><a href="#" class="button" onclick="openPopup()">Buy Now</a></li>
+                </ul>
+            </div>
+        </div>
+
+        {{!-- <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h2>Enter Your Card Details and Email</h2>
+                <form>
+                    <label for="card">Card Number:</label><br>
+                    <input type="text" id="card" name="card" required><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div> --}}
+
+    </div>
+    {{>footer}}
+
+    <script>
+        function openPopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'block';
+        }
+
+        function closePopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
