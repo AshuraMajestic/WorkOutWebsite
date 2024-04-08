@@ -12,7 +12,7 @@
 
 <body>
     {{>navbar}}
-    <div class="container">
+    <div class="container my-5">
         <h1 style="text-align:center; color:white;">Choose Your plan</h1>
         <div class="row pricing">
             <div class="columns col-5 mx-5">
@@ -22,7 +22,7 @@
                     <li class="white">10 Meal-Plans/Month</li>
                     <li class="white">10 WorkOut-Plan/Month</li>
                     <li class="white">10 Advices</li>
-                    <li class="grey"><a href="#" class="button">Already Bought</a></li>
+                    <li class="grey"><button class="button" disabled>Already Bought</button></li>
                 </ul>
             </div>
 
@@ -33,39 +33,172 @@
                     <li class="white">Unlimited Meal-plans</li>
                     <li class="white">Unlimited WorkOut-Plan</li>
                     <li class="white">Unlimited Advices</li>
-                    <li class="grey"><a href="#" class="button" onclick="openPopup()">Buy Now</a></li>
+                    <li class="grey"><button class="button" id="buyNow">Buy Now</button></li>
                 </ul>
             </div>
         </div>
 
-        {{!-- <div id="popup" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup()">&times;</span>
-                <h2>Enter Your Card Details and Email</h2>
-                <form>
-                    <label for="card">Card Number:</label><br>
-                    <input type="text" id="card" name="card" required><br><br>
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required><br><br>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </div> --}}
+        <div class="container my-5 py-5 popup" id="popup">
+            <div class="row d-flex justify-content-center py-5">
+                <div class="col-md-7 col-lg-5 col-xl-4">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-4">
+                            <form id="cardForm" action="/submitform" method="POST">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="form-outline">
+                                        <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
+                                            placeholder="1234 5678 9012 3457" minlength="16" maxlength="19"
+                                            name="cardNumber" />
+                                        <label class="form-label" for="typeText">Card Number</label>
+                                    </div>
+                                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa"
+                                        width="64px" />
+                                </div>
 
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                                            placeholder="Cardholder's Name" name="Name" />
+                                        <label class="form-label" for="typeName">Cardholder's Name</label>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div class="form-outline">
+                                        <input type="email" id="typeMail" class="form-control form-control-lg"
+                                            placeholder="Enter email" name="mail" />
+                                        <label class="form-label" for="typeMail">Cardholder's Email</label>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center pb-2">
+                                    <div class="form-outline">
+                                        <input type="text" id="typeExp" class="form-control form-control-lg"
+                                            placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7"
+                                            name="Exp" />
+                                        <label class="form-label" for="typeExp">Expiration</label>
+                                    </div>
+                                    <div class="form-outline">
+                                        <input type="password" id="typeText2" class="form-control form-control-lg"
+                                            placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3"
+                                            name="cvv" />
+                                        <label class="form-label" for="typeText2">Cvv</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-info btn-lg btn-rounded validate">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
     {{>footer}}
-
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
     <script>
+        document.getElementById("cardForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+            console.log("submitted");
+            if (validateForm()) {
+                var mail = document.getElementById("typeMail").value;
+                sendEmail(mail);
+            }
+        });
+
+        function sendEmail(email) {
+            var cardNumber = document.getElementById("typeText").value;
+            var name = document.getElementById("typeName").value;
+            var expirationDate = document.getElementById("typeExp").value;
+            var cvv = document.getElementById("typeText2").value;
+
+            // Prepare email body
+            var emailBody = " $10 is debited from your account .\nCard Number: " + cardNumber + "<br>Name: " + name + "<br>Expiration Date: " + expirationDate + "<br>CVV: " + cvv + "<br><br>\nThank you for subscribing! We will try to provide you with the utmost offers. Your subscription is confirmed.";
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "ashuramajestic@gmail.com",
+                Password: "B282E7C66F5819F11469DE949DD8EDD2EA36",
+                To: email,
+                From: "ashuramajestic@gmail.com",
+                Subject: "Invoice",
+                Body: emailBody
+            }).then((success) => {
+                alert("message sent successfully");
+                closePopup();
+            }).catch((error) => {
+                alert("message not sent");
+
+            })
+        }
         function openPopup() {
             var popup = document.getElementById('popup');
+            var background = document.querySelector('.container');
             popup.style.display = 'block';
         }
 
         function closePopup() {
             var popup = document.getElementById('popup');
+            var background = document.querySelector('.container');
             popup.style.display = 'none';
         }
+
+        // Validation function for card number
+        function validateCardNumber(cardNumber) {
+            var cardNumberPattern = /^[0-9]{16}$/;
+            return cardNumberPattern.test(cardNumber);
+        }
+
+        // Validation function for cardholder's name
+        function validateCardholderName(name) {
+            return name.trim() !== "";
+        }
+
+
+        // Validation function for CVV
+        function validateCVV(cvv) {
+            var cvvPattern = /^[0-9]{3}$/;
+            return cvvPattern.test(cvv);
+        }
+
+        // Function to perform all validations
+        function validateForm() {
+            var cardNumber = document.getElementById("typeText").value;
+            var name = document.getElementById("typeName").value;
+            var expirationDate = document.getElementById("typeExp").value;
+            var cvv = document.getElementById("typeText2").value;
+
+            var errors = [];
+
+            if (!validateCardNumber(cardNumber)) {
+                errors.push("Invalid card number. Please enter a valid 16-digit card number.");
+            }
+
+            if (!validateCardholderName(name)) {
+                errors.push("Cardholder's name is required.");
+            }
+
+
+            if (!validateCVV(cvv)) {
+                errors.push("Invalid CVV. Please enter a valid 3-digit CVV.");
+            }
+
+            if (errors.length > 0) {
+                alert(errors.join("\n"));
+                return false; // Prevent form submission
+            } else {
+                return true; // Allow form submission
+            }
+        }
+
+        // Event binding for Buy Now button
+        document.getElementById("buyNow").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default button action
+            openPopup();
+        });
     </script>
+
 </body>
 
 </html>
