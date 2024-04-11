@@ -4,7 +4,6 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 body .navbar-style {
   background-color: transparent;
   margin-top: 2rem;
@@ -13,7 +12,6 @@ body .navbar-style {
 body .navbar-style nav {
   background-color: transparent;
 }
-
 .container {
   width: 100vw;
 }
@@ -32,16 +30,21 @@ body .navbar-style nav {
     border-color: red;
   }
 }
-.meal-style .hero-text #user-info-form label {
-  color: white;
-  margin-top: 0;
-  margin-bottom: 0;
+.meal-style {
+  & .hero-text {
+    & #user-info-form {
+      & label {
+        color: white;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
-
 .meal-style .meal-plan {
   color: gold;
   border: 0.5rem black solid;
   background-color: rgba(0, 0, 0, 0.5);
   font-size: 2rem;
   line-height: 3rem;
-}/*# sourceMappingURL=nutrition.css.map */
+}
