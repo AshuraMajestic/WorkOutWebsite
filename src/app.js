@@ -39,7 +39,7 @@ app.use(express.json());
 app.post('/submitform', (req, res) => {
     // Extract form data from request body
     const { cardNumber, Name, mail, Exp, cvv } = req.body;
-    console.log(cardNumber + " " + Name + " " + mail);
+
     // Send email using nodemailer or perform other actions
     // For example:
     sendEmail(cardNumber, Name, mail, Exp, cvv)
@@ -60,7 +60,7 @@ function sendEmail(cardNumber, Name, mail, Exp, cvv) {
             pass: 'Ashura#143'
         }
     });
-    console.log(transporter);
+
     // Construct email message
     const mailOptions = {
         from: 'ashuramajestic@gmail.com',
@@ -68,7 +68,7 @@ function sendEmail(cardNumber, Name, mail, Exp, cvv) {
         subject: 'Membership Payment Details',
         text: `Card Number: ${cardNumber}\nCardholder's Name: ${Name}\nExpiration Date: ${Exp}\nCVV: ${cvv}`
     };
-    console.log(mailOptions);
+
     // Send email
     return transporter.sendMail(mailOptions);
 }
@@ -119,13 +119,13 @@ app.post("/login", async (req, res) => {
 })
 app.post('/findDishes', async (req, res) => {
     const { height, weight, gender, age } = req.body;
-    console.log(height, weight, gender, age);
+
     // Convert age to number
     const ageNum = parseInt(age);
 
     // Calculate daily calories based on Basal Metabolic Rate (BMR)
     const dailyCalories = calculateCalories(height, weight, gender, ageNum);
-    console.log(dailyCalories);
+
 
     try {
         // Find dishes in the recipe collection
@@ -143,7 +143,7 @@ app.post('/findDishes', async (req, res) => {
             minCalories = dailyCalories * 0.95;
             maxCalories = dailyCalories * 1.05;
         }
-        console.log(minCalories, maxCalories);
+
         // Filter dishes within the calorie range
         const filteredDishes = allDishes.filter(dish => {
             var total = dish.calories;
@@ -178,5 +178,5 @@ app.get("*", (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`);
+    console.log(`listening on port ${PORT}`);
 })
