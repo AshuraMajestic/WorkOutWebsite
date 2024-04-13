@@ -97,6 +97,11 @@ label {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  & img {
+    width: 100%;
+    filter: saturate(10);
+    height: 100%;
+  }
 }
 
 // services startv here

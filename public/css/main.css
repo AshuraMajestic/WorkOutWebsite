@@ -101,6 +101,11 @@ label {
   align-items: center;
   overflow: hidden;
 }
+.hero-text figure img {
+  width: 100%;
+  filter: saturate(10);
+  height: 100%;
+}
 
 .service-style,
 .review-style {
