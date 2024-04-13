@@ -173,6 +173,12 @@ function calculateCalories(height, weight, gender, age) {
 app.get("/nutrients", (req, res) => {
     res.render("nutrition");
 })
+app.get("/body", (req, res) => {
+    res.render("body");
+})
+app.get("/contact", (req, res) => {
+    res.render("contact");
+})
 app.get("*", (req, res) => {
     res.render("error");
 })
