@@ -56,14 +56,14 @@ function sendEmail(cardNumber, Name, mail, Exp, cvv) {
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: 'ashuramajestic@gmail.com',
-            pass: 'Ashura#143'
+            user: process.env.MAIL_ID,
+            pass: process.env.PASS
         }
     });
 
     // Construct email message
     const mailOptions = {
-        from: 'ashuramajestic@gmail.com',
+        from: process.env.MAIL_ID,
         to: mail,
         subject: 'Membership Payment Details',
         text: `Card Number: ${cardNumber}\nCardholder's Name: ${Name}\nExpiration Date: ${Exp}\nCVV: ${cvv}`
@@ -76,7 +76,6 @@ function sendEmail(cardNumber, Name, mail, Exp, cvv) {
 
 
 app.get("/", async (req, res) => {
-
     res.render("index");
 });
 app.get("/login", (req, res) => {
