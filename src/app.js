@@ -74,7 +74,9 @@ function sendEmail(cardNumber, Name, mail, Exp, cvv) {
 }
 
 
-
+app.get("/membership", (req, res) => {
+    res.render("membership");
+});
 app.get("/", async (req, res) => {
     res.render("index");
 });
